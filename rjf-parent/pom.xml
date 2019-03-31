@@ -21,11 +21,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
   	<springboot.actuator.version>2.1.3.RELEASE</springboot.actuator.version>
   	<springboot.test.version>2.1.3.RELEASE</springboot.test.version>
   	<springboot.aop.version>2.1.3.RELEASE</springboot.aop.version>
+  	<springboot.thymeleaf.version>2.1.3.RELEASE</springboot.thymeleaf.version>
+  	<springboot.elasticsearch.version>2.1.3.RELEASE</springboot.elasticsearch.version>
+  	<springboot.redis.version>1.4.7.RELEASE</springboot.redis.version>
   	<mybatis.pagehelper.version>1.2.10</mybatis.pagehelper.version>
   	<springfox-swagger2.version>2.9.2</springfox-swagger2.version>
   	<swagger-ui.version>2.9.2</swagger-ui.version>
   	<jjwt.version>0.9.1</jjwt.version>
-  	<springboot.redis.version>1.4.7.RELEASE</springboot.redis.version>
   	<dubbo.version>2.6.6</dubbo.version>
   	<zookeeper.version>3.4.13</zookeeper.version>
   	<mysql.version>5.1.47</mysql.version>
@@ -106,6 +108,22 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-aop</artifactId>
 		    <version>${springboot.aop.version}</version>
+		</dependency>
+		
+		<!-- html，css等网页处理器
+		     https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+		    <version>${springboot.thymeleaf.version}</version>
+		</dependency>
+		
+		<!-- 搜索引擎
+		     https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-elasticsearch -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
+		    <version>${springboot.elasticsearch.version}</version>
 		</dependency>
 		
 		<!-- API文档生成工具
