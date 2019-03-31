@@ -1,0 +1,171 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.rjf</groupId>
+  <artifactId>rjf-parent</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  
+  <!-- 集中定义依赖的版本号 -->
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <java.version>1.8</java.version>
+    <skipTests>true</skipTests>
+    
+  	<springboot.dependencies.version>2.1.3.RELEASE</springboot.dependencies.version>
+  	<springboot.web.version>2.1.3.RELEASE</springboot.web.version>
+  	<springboot.security.version>2.1.3.RELEASE</springboot.security.version>
+  	<springboot.mybatis.version>2.0.0</springboot.mybatis.version>
+  	<springboot.actuator.version>2.1.3.RELEASE</springboot.actuator.version>
+  	<springboot.test.version>2.1.3.RELEASE</springboot.test.version>
+  	<springboot.aop.version>2.1.3.RELEASE</springboot.aop.version>
+  	<mybatis.pagehelper.version>1.2.10</mybatis.pagehelper.version>
+  	<springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+  	<swagger-ui.version>2.9.2</swagger-ui.version>
+  	<jjwt.version>0.9.1</jjwt.version>
+  	<springboot.redis.version>1.4.7.RELEASE</springboot.redis.version>
+  	<dubbo.version>2.6.6</dubbo.version>
+  	<zookeeper.version>3.4.13</zookeeper.version>
+  	<mysql.version>5.1.47</mysql.version>
+  	<durid.version>1.1.14</durid.version>
+  </properties>
+  
+  <!-- 管理的jar包 -->
+  <dependencyManagement>
+  	<dependencies>
+  		<!-- spingboot依赖，相当于boot父工程
+  		     https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-dependencies</artifactId>
+		    <version>${spring.oot.dependencies.version}</version>
+		    <type>pom</type>
+		    <scope>provided</scope>
+		</dependency>
+		
+  		<!-- boot使用的web容器jar包,里面嵌套了tomcat
+  		     https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-web</artifactId>
+		    <version>${springboot.web.version}</version>
+		</dependency>
+		
+		<!-- 权限控制系统
+		     https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-security</artifactId>
+		    <version>${springboot.security.version}</version>
+		</dependency>
+		
+		<!-- mybatis与springboot结合的jar包
+		     https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+		<dependency>
+		    <groupId>org.mybatis.spring.boot</groupId>
+		    <artifactId>mybatis-spring-boot-starter</artifactId>
+		    <version>${springboot.mybatis.version}</version>
+		</dependency>
+		
+		<!-- mybatis分页插件
+		     https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper-spring-boot-starter -->
+		<dependency>
+		    <groupId>com.github.pagehelper</groupId>
+		    <artifactId>pagehelper-spring-boot-starter</artifactId>
+		    <version>${mybatis.pagehelper.version}</version>
+		</dependency>
+		
+		<!-- 系统健康情况的监控工具，实现配置文件查看和相关功能统计
+		     https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-actuator</artifactId>
+		    <version>${springboot.actuator.version}</version>
+		</dependency>
+		
+		<!-- 单元测试
+		     https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-test</artifactId>
+		    <version>${springboot.test.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		
+		<!-- 事务管理
+		     https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-aop</artifactId>
+		    <version>${springboot.aop.version}</version>
+		</dependency>
+		
+		<!-- API文档生成工具
+		     https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+		    <version>${springfox-swagger2.version}</version>
+		</dependency>
+		<!-- API文档生成工具
+		     https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger-ui</artifactId>
+		    <version>${swagger-ui.version}</version>
+		</dependency>
+		
+		<!-- Json web token,用于分布式站点的单点登录
+		     https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
+		<dependency>
+		    <groupId>io.jsonwebtoken</groupId>
+		    <artifactId>jjwt</artifactId>
+		    <version>${jjwt.version}</version>
+		</dependency>
+		
+		<!-- redis缓存
+		     https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-redis -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-redis</artifactId>
+		    <version>${springboot.redis.version}</version>
+		</dependency>
+		
+		<!-- dubbo服务发布工具
+		     https://mvnrepository.com/artifact/com.alibaba/dubbo -->
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>dubbo</artifactId>
+		    <version>${dubbo.version}</version>
+		</dependency>
+		
+		<!-- zookeeper注册中心
+		     https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+		<dependency>
+		    <groupId>org.apache.zookeeper</groupId>
+		    <artifactId>zookeeper</artifactId>
+		    <version>${zookeeper.version}</version>
+		    <type>pom</type>
+		</dependency>
+		
+		<!-- mysql驱动
+		     https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>${mysql.version}</version>
+		</dependency>
+		
+		<!-- durid数据库连接池
+		     https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>druid-spring-boot-starter</artifactId>
+		    <version>${durid.version}</version>
+		</dependency>
+		
+  	</dependencies>
+  </dependencyManagement>
+</project>
