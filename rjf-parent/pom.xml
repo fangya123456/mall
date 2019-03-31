@@ -38,6 +38,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
   	<commons-lang3.version>3.8.1</commons-lang3.version>
   	<commons-io.version>1.3.2</commons-io.version>
   	<commons-net.version>3.6</commons-net.version>
+  	<fastjson.version>1.2.56</fastjson.version>
   </properties>
   
   <!-- 管理的jar包 -->
@@ -236,6 +237,14 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		    <groupId>commons-net</groupId>
 		    <artifactId>commons-net</artifactId>
 		    <version>${commons-net.version}</version>
+		</dependency>
+		
+		<!-- Json数据处理工具包
+		     https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>fastjson</artifactId>
+		    <version>${fastjson.version}</version>
 		</dependency>
 		
   	</dependencies>
